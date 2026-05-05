@@ -35,6 +35,24 @@ El proyecto es un sistema adaptado para un ESP32 que permite a los usuarios depo
 ```
 5. Acceder a la aplicación a través de `http://localhost:8000` en tu navegador web.
 
+### Instrucciones para instalar en ESP32
+1. Asegúrate de tener el entorno de desarrollo para ESP32 configurado (Arduino IDE o PlatformIO).
+2. Compila y sube el código del ESP32 que se encuentra en la raíz del proyecto.
+3. Reemplaza las credenciales de Wi-Fi en el código del ESP32 con las de tu red.
+4. El ESP32 se conectará a la red Wi-Fi y podrá interactuar con la aplicación web o puedes probar con Postman.
+    4.1 Para probar con Postman, monitorea el puerto serie del ESP32 para obtener la dirección IP asignada.
+    4.2 Envía una solicitud WebSocket a la dirección "ws://<IP_DEL_ESP32>:81" para interactuar con el sistema.
+    4.3 Envía un mensaje con la estructura "PASSWORD:COMANDO" para encender el led deseado.
+
+### Tabla de listado de comandos para el ESP32
+PASSWORD:21 -> Enciende el led verde
+PASWORD:41 -> Enciende el led azul
+PASSWORD:51 -> Enciende el led blanco
+PASSWORD:181 -> Enciende el led rojo
+PASSWPORD:180 -> Apaga el led rojo
+PASSWORD:P1 -> Enciende el led amarillo (Simulación de una puerta abierta)
+PASSWORD:P0 -> Apaga el led amarillo (Simulación de una puerta cerrada, en este estado no es posible encender otro led que no sea el rojo)
+
 ### Contribuciones
 Las contribuciones al proyecto son bienvenidas. Si deseas contribuir, por favor sigue estos pasos:
 1. Haz un fork del repositorio.
